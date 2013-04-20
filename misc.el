@@ -1,11 +1,20 @@
-(require-package 'unfill)
-(require-package 'whole-line-or-region)
 
 (when (fboundp 'electric-pair-mode)
   (electric-pair-mode))
 
 ;;; No welcome screen:
 (setq inhibit-startup-message t)
+
+
+;;; https://github.com/ralph-moeritz/.emacs.d/
+(setq inhibit-startup-message t) ;; no splash screen
+(setq-default indent-tabs-mode nil) ;; no tabs please
+(prefer-coding-system 'utf-8) ;; prefer utf-8
+(add-hook 'text-mode-hook 'turn-on-auto-fill) ;; auto-fill in text-mode
+(put 'erase-buffer 'disabled nil) ;; enable erase-buffer
+(winner-mode 1) ;; winner mode FTW
+(put 'upcase-region 'disabled nil) ;; enable upcase-region
+(setq-default fill-column 79) ;; fill at col 79
 
 ;;----------------------------------------------------------------------------
 ;; Some basic preferences (inspired by https://github.com/purcell/emacs.d)

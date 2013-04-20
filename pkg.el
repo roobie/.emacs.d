@@ -11,7 +11,8 @@
   (package-refresh-contents))
 
  ;; Add in your own as you wish:
-(defvar my-packages '(tabbar)
+(defvar my-packages '(tabbar
+                      color-theme-solarized)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
