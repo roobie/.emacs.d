@@ -2,10 +2,6 @@
 (when (fboundp 'electric-pair-mode)
   (electric-pair-mode))
 
-;;; No welcome screen:
-(setq inhibit-startup-message t)
-
-
 ;;; https://github.com/ralph-moeritz/.emacs.d/
 (setq inhibit-startup-message t) ;; no splash screen
 (setq-default indent-tabs-mode nil) ;; no tabs please
