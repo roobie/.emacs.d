@@ -14,3 +14,5 @@
   (redshank-mode))
 
 (add-hook 'lisp-mode-hook 'lisp-setup)
+
+(provide 'lisp)
