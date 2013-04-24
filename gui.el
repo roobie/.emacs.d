@@ -1,7 +1,4 @@
 ;;; GUI initialization
-(require 'color-theme)
-(setq color-theme-is-global t)
-(color-theme-robin-hood)
 
 (set-face-attribute 'default nil :height 120 :font "UbuntuMono")
 
@@ -12,6 +9,7 @@
 (tabbar-mode t)
 
 ;;; Theming ;;;
+(require-package 'color-theme)
 (require-package 'color-theme-molokai)
 (color-theme-molokai)
 
