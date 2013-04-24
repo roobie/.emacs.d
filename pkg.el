@@ -3,7 +3,6 @@
 (require 'package)
 
 ;;; Standard package repositories
-
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 ;; We include the org repository for completeness, but don't normally
@@ -24,19 +23,6 @@
          (or (not (string-equal archive "melpa"))
              (not (memq package '(slime)))))))
 
-
-(defun require-package (package &optional min-version no-refresh)
-  "Install given PACKAGE, optionally requiring MIN-VERSION.
-If NO-REFRESH is non-nil, the available package lists will not be
-re-downloaded in order to locate PACKAGE."
-  (if (package-installed-p package min-version)
-      t
-    (if (or (assoc package package-archive-contents) no-refresh)
-        (package-install package)
-      (progn
-        (package-refresh-contents)
-        (require-package package min-version t)))))
-
 (package-initialize)
 
 (when (not package-archive-contents)
@@ -45,7 +31,34 @@ re-downloaded in order to locate PACKAGE."
  ;; Add in your own as you wish:
 (defvar my-packages '(tabbar
                       paredit
-                      color-theme-solarized)
+                      color-theme
+                      color-theme-molokai
+                      auto-complete
+                      elisp-slime-nav
+                      lively
+                      diminish
+                      pretty-mode
+                      auto-compile
+                      hl-sexp
+                      eldoc-eval
+                      magit
+                      clojure-mode
+                      clojure-test-mode
+                      elein
+                      nrepl
+                      slamhound
+                      ac-nrepl
+                      rainbow-mode
+                      dired+
+                      whole-line-or-region
+                      mic-paren
+                      ace-jump-mode
+                      ido-ubiquitous
+                      idomenu
+                      mmm-mode
+                      smex
+                      js3-mode
+                      redshank)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)

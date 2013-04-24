@@ -1,5 +1,4 @@
 ;;; Much of this is complements sanityinc:
-(require-package 'auto-complete)
 (require 'auto-complete-config)
 (global-auto-complete-mode t)
 (setq ac-expand-on-auto-complete nil)
@@ -40,7 +39,6 @@
   (< (buffer-size buf) (* 4 1024 1024)))
 
 (setq dabbrev-friend-buffer-function 'buffer-restrict)
-(require-package 'auto-complete)
 (require 'auto-complete-config)
 (global-auto-complete-mode t)
 (setq ac-expand-on-auto-complete nil)

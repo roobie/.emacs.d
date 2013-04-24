@@ -9,8 +9,6 @@
 (tabbar-mode t)
 
 ;;; Theming ;;;
-(require-package 'color-theme)
-(require-package 'color-theme-molokai)
 (color-theme-molokai)
 
 (provide 'gui)
