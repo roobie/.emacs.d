@@ -48,7 +48,7 @@
                       nrepl
                       slamhound
                       ac-nrepl
-                      rainbow-mode
+                      rainbow-delimiters
                       dired+
                       whole-line-or-region
                       mic-paren
