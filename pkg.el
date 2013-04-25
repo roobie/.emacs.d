@@ -57,7 +57,10 @@
                       idomenu
                       mmm-mode
                       smex
-                      js3-mode
+                      js2-mode
+                      json
+                      js-comint
+                      flymake-jslint
                       redshank)
   "A list of packages to ensure are installed at launch.")
 

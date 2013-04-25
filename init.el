@@ -10,6 +10,7 @@
 (require 'theming)
 (require 'key-bindings)
 (require 'auto-complete)
+(require 'idocfg)
 (require 'lisp)
 (require 'slime)
 
