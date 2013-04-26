@@ -43,4 +43,46 @@
 ;;; Automatically load changes in file from disc.
 (global-auto-revert-mode t)
 
+(paren-activate)     ; activating mic-paren
+
+
+(transient-mark-mode t)
+
+(define-key global-map (kbd "RET") 'newline-and-indent)
+
+
+
+;;----------------------------------------------------------------------------
+;; Rectangle selections, and overwrite text when the selection is active
+;;----------------------------------------------------------------------------
+(cua-selection-mode t)                  ; for rectangles, CUA is nice
+
+;; Train myself to use M-f and M-b instead
+(global-unset-key [M-left])
+(global-unset-key [M-right])
+
+(move-text-default-bindings)
+
+;;----------------------------------------------------------------------------
+;; Fix backward-up-list to understand quotes, see http://bit.ly/h7mdIL
+;;----------------------------------------------------------------------------
+(defun backward-up-sexp (arg)
+  "Jump up to the start of the ARG'th enclosing sexp."
+  (interactive "p")
+  (let ((ppss (syntax-ppss)))
+    (cond ((elt ppss 3)
+           (goto-char (elt ppss 8))
+           (backward-up-sexp (1- arg)))
+          ((backward-up-list arg)))))
+
+(global-set-key [remap backward-up-list] 'backward-up-sexp) ; C-M-u, C-M-up
+
+
+;;----------------------------------------------------------------------------
+;; Cut/copy the current line if no region is active
+;;----------------------------------------------------------------------------
+(whole-line-or-region-mode t)
+(diminish 'whole-line-or-region-mode)
+(make-variable-buffer-local 'whole-line-or-region-mode)
+
 (provide 'misc)

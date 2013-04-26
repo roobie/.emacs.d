@@ -30,6 +30,8 @@
 
  ;; Add in your own as you wish:
 (defvar my-packages '(tabbar
+                      move-text
+                      mic-paren
                       paredit
                       color-theme
                       color-theme-molokai

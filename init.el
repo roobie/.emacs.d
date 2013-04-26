@@ -4,15 +4,17 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d"))
 
 ;;; require the applicalble configurations
-(require 'gui)
-(require 'pkg)
-(require 'misc)
-(require 'theming)
-(require 'key-bindings)
+(require 'gui) ; fix stuff like menu bar and font
+(require 'pkg) ; initialize package handling and install missing default packages
+(require 'utils)
+(require 'misc) ; misc stuff like preferences and the like
+(require 'theming) ; initialize sane themes
+(require 'key-bindings) ; manage key bindings
 (require 'auto-complete)
 (require 'idocfg)
 (require 'lisp)
 (require 'slime)
+(require 'javascript)
 
 ;;; Local changes:
 ;; (create a 'local.el' file with custom code for it to be loaded:
