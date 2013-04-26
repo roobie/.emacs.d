@@ -5,8 +5,8 @@
 
 ;;; require the applicalble configurations
 (require 'gui) ; fix stuff like menu bar and font
-(require 'pkg) ; initialize package handling and install missing default packages
 (require 'utils)
+(require 'pkg) ; initialize package handling and install missing default packages
 (require 'misc) ; misc stuff like preferences and the like
 (require 'theming) ; initialize sane themes
 (require 'key-bindings) ; manage key bindings

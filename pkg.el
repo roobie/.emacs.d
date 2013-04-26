@@ -70,5 +70,27 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
+;; http://blog.deadpansincerity.com/2011/05/setting-up-emacs-as-a-javascript-editing-environment-for-fun-and-profit/
+(add-to-list 'load-path (directory-of-library "auto-complete"))
+; Load the default configuration
+(require 'auto-complete-config)
+; Make sure we can find the dictionaries
+(add-to-list 'ac-dictionary-directories (concat (directory-of-library "auto-complete") "/dict"))
+; Use dictionaries by default
+(setq-default ac-sources (add-to-list 'ac-sources 'ac-source-dictionary))
+(global-auto-complete-mode t)
+; Start auto-completion after 2 characters of a word
+(setq ac-auto-start 2)
+; case sensitivity is important when finding matches
+(setq ac-ignore-case nil)
+
+(add-to-list 'load-path (directory-of-library "yasnippet"))
+;; Load the library
+(require 'yasnippet)
+(yas-global-mode 1)
+;; Load the snippet files themselves
+(yas/load-directory (concat (directory-of-library "yasnippet") "/snippets/text-mode"))
+;; Let's have snippets in the auto-complete dropdown
+(add-to-list 'ac-sources 'ac-source-yasnippet)
 
 (provide 'pkg)
