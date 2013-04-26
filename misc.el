@@ -48,9 +48,6 @@
 
 (transient-mark-mode t)
 
-(define-key global-map (kbd "RET") 'newline-and-indent)
-
-
 
 ;;----------------------------------------------------------------------------
 ;; Rectangle selections, and overwrite text when the selection is active
