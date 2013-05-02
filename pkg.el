@@ -9,9 +9,6 @@
 ;; use it.
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 
-(when (< emacs-major-version 24)
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-
 ;;; Also use Melpa for most packages
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
 
@@ -28,8 +25,11 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
- ;; Add in your own as you wish:
+;; Add in your own as you wish:
 (defvar my-packages '(tabbar
+                      starter-kit
+                      starter-kit-js
+                      starter-kit-lisp
                       move-text
                       mic-paren
                       paredit
@@ -70,6 +70,9 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
+
+;;; DUNNO WHY THIS DOESNT WORK IF NOT IN THIS FILE?!??!
+;;; TRIED MOVING IT TO AUTO-COMPLETE.EL BUT TO NO AVAIL
 ;; http://blog.deadpansincerity.com/2011/05/setting-up-emacs-as-a-javascript-editing-environment-for-fun-and-profit/
 (add-to-list 'load-path (directory-of-library "auto-complete"))
 ; Load the default configuration
