@@ -3,6 +3,6 @@
 (require 'slime-autoloads)
 (slime-setup)
 
-(load (expand-file-name "~/quicklisp/slime-helper.el"))
+(load (expand-file-name "~/devel/quicklisp/slime-helper.el"))
 
 (provide 'slime)
