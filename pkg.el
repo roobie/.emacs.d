@@ -69,7 +69,9 @@
                       geiser
                       d-mode
                       redshank
-                      go-mode)
+                      go-mode
+                      go-errcheck
+                      company-go)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)

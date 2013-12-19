@@ -16,6 +16,8 @@
 (require 'slime)
 (require 'javascript)
 (require 'go)
+(require 'go-autocomplete)
+(require 'auto-complete-config)
 
 ;;; Local changes:
 ;; (create a 'local.el' file with custom code for it to be loaded:
