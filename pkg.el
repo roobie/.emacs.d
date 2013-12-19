@@ -7,7 +7,7 @@
 
 ;; We include the org repository for completeness, but don't normally
 ;; use it.
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+;(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 
 ;;; Also use Melpa for most packages
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
@@ -65,9 +65,11 @@
                       flymake-jslint
                       yasnippet
                       yasnippet-bundle
+                      nimrod-mode
                       geiser
                       d-mode
-                      redshank)
+                      redshank
+                      go-mode)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
@@ -100,5 +102,7 @@
 (yas/load-directory (concat (directory-of-library "yasnippet") "/snippets/text-mode"))
 ;; Let's have snippets in the auto-complete dropdown
 (add-to-list 'ac-sources 'ac-source-yasnippet)
+
+(require 'nimrod-mode)
 
 (provide 'pkg)
