@@ -1,6 +1,5 @@
-
 ;;; BOOTSTRAP
-
+;;; Define the list of files to load
 (defvar *load-files* '(gui
                        utils
                        pkg
@@ -8,12 +7,12 @@
                        theming
                        key-bindings
                        auto-complete
+                       yas
                        idocfg
                        lisp
                        slime
                        javascript
                        go
-                       go-autocomplete
                        ;auto-complete-config
                        ))
 

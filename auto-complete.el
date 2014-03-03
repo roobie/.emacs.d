@@ -1,5 +1,18 @@
 ;;; Much of this is complements sanityinc:
+;; http://blog.deadpansincerity.com/2011/05/setting-up-emacs-as-a-javascript-editing-environment-for-fun-and-profit/
+(add-to-list 'load-path (directory-of-library "auto-complete"))
+; Load the default configuration
 (require 'auto-complete-config)
+; Make sure we can find the dictionaries
+(add-to-list 'ac-dictionary-directories (concat (directory-of-library "auto-complete") "/dict"))
+; Use dictionaries by default
+(setq-default ac-sources (add-to-list 'ac-sources 'ac-source-dictionary))
+(global-auto-complete-mode t)
+; Start auto-completion after 2 characters of a word
+(setq ac-auto-start 2)
+; case sensitivity is important when finding matches
+(setq ac-ignore-case nil)
+
 (global-auto-complete-mode t)
 (setq ac-expand-on-auto-complete t)
 (setq ac-auto-start t)
