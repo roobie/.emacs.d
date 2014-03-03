@@ -3,7 +3,6 @@
   (electric-pair-mode))
 
 ;;; https://github.com/ralph-moeritz/.emacs.d/
-(setq inhibit-startup-message t) ;; no splash screen
 (setq-default indent-tabs-mode nil) ;; no tabs please
 (prefer-coding-system 'utf-8) ;; prefer utf-8
 (add-hook 'text-mode-hook 'turn-on-auto-fill) ;; auto-fill in text-mode
@@ -57,6 +56,8 @@
 ;; Train myself to use M-f and M-b instead
 (global-unset-key [M-left])
 (global-unset-key [M-right])
+(global-unset-key [C-left])
+(global-unset-key [C-right])
 
 (move-text-default-bindings)
 

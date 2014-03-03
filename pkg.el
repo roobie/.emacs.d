@@ -55,6 +55,7 @@
                       mmm-mode
                       smex
                       js2-mode
+                      js3-mode
                       json
                       js-comint
                       flymake-jslint

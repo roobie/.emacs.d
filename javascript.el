@@ -1,6 +1,6 @@
 
 (defcustom preferred-javascript-mode
-  (first (remove-if-not #'fboundp '(js-mode js2-mode js3-mode)))
+  (first (remove-if-not #'fboundp '(js2-mode js-mode js3-mode)))
   "Javascript mode to use for .js files."
   :type 'symbol
   :group 'programming
@@ -78,7 +78,17 @@
   nil " InfJS" inferior-js-minor-mode-map)
 
 (dolist (hook '(js2-mode-hook js3-mode-hook js-mode-hook))
-  (add-hook hook 'inferior-js-keys-mode))
+  (progn
+    (add-hook hook 'inferior-js-keys-mode)
+    (add-hook hook 'paredit-mode)))
+
+(font-lock-add-keywords 'js2-mode `(("\\(function *\\)("
+                                     (0 (progn (compose-region (match-beginning 1) (match-end 1)
+                                                               "ƒ")
+                                               nil)))))
+(font-lock-add-keywords 'js2-mode
+                        '(("\\<\\(FIX\\|TODO\\|FIXME\\|HACK\\|REFACTOR\\):"
+                           1 font-lock-warning-face t)))
 
 ;; ---------------------------------------------------------------------------
 ;; Alternatively, use skewer-mode
