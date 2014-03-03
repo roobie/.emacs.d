@@ -1,4 +1,3 @@
-
 ;;; We need package.el
 (require 'package)
 
@@ -72,8 +71,5 @@
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
-
-
-(require 'nimrod-mode)
 
 (provide 'pkg)

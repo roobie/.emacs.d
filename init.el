@@ -13,7 +13,7 @@
                        slime
                        javascript
                        go
-                       ;auto-complete-config
+                       nimrod
                        ))
 
 ;; Load the files in the .emacs.d directory
