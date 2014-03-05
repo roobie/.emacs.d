@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-#name : ctor
-# --
-function $2(properties) {
-  $0
-}
