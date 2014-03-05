@@ -82,13 +82,17 @@
     (add-hook hook 'inferior-js-keys-mode)
     (add-hook hook 'paredit-mode)))
 
-(font-lock-add-keywords 'js2-mode `(("\\(function *\\)("
-                                     (0 (progn (compose-region (match-beginning 1) (match-end 1)
-                                                               "ƒ")
-                                               nil)))))
-(font-lock-add-keywords 'js2-mode
-                        '(("\\<\\(FIX\\|TODO\\|FIXME\\|HACK\\|REFACTOR\\):"
-                           1 font-lock-warning-face t)))
+(dolist (mode '(js-mode js2-mode js3-mode))
+  (progn
+    (font-lock-add-keywords mode
+                            `(("\\(function *\\)"
+                               (0 (progn (compose-region (match-beginning 1) (match-end 1)
+                                                         "λ");"ƒ"
+                                         nil)))))
+    (font-lock-add-keywords mode
+                            '(("\\<\\(FIX\\|TODO\\|FIXME\\|HACK\\|REFACTOR\\):"
+                               1 font-lock-warning-face t)))))
+
 
 ;; ---------------------------------------------------------------------------
 ;; Alternatively, use skewer-mode
