@@ -80,7 +80,8 @@
 (dolist (hook '(js2-mode-hook js3-mode-hook js-mode-hook))
   (progn
     (add-hook hook 'inferior-js-keys-mode)
-    (add-hook hook 'paredit-mode)))
+    ;(add-hook hook 'paredit-mode)
+    ))
 
 (dolist (mode '(js-mode js2-mode js3-mode))
   (progn
