@@ -30,3 +30,6 @@
     (load (expand-file-name "~/.emacs.d/local.el"))
     (require 'local)))
 
+(require 'server)
+(unless (server-running-p)
+  (server-start))
