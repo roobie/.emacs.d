@@ -53,12 +53,6 @@
 ;;----------------------------------------------------------------------------
 (cua-selection-mode t)                  ; for rectangles, CUA is nice
 
-;; Train myself to use M-f and M-b instead
-(global-unset-key [M-left])
-(global-unset-key [M-right])
-(global-unset-key [C-left])
-(global-unset-key [C-right])
-
 (move-text-default-bindings)
 
 ;;----------------------------------------------------------------------------

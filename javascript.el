@@ -86,7 +86,8 @@
 (dolist (mode '(js-mode js2-mode js3-mode))
   (progn
     (font-lock-add-keywords mode
-                            `(("\\(function *\\)"
+                            `((;"\\(function *\\)"
+                               "\\(function*[ ]*\\)[\(]+"
                                (0 (progn (compose-region (match-beginning 1) (match-end 1)
                                                          "λ");"ƒ"
                                          nil)))))

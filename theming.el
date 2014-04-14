@@ -3,6 +3,6 @@
 (tabbar-mode t)
 
 ;;; Theming ;;;
-(color-theme-molokai)
+;(color-theme-molokai)
 
 (provide 'theming)
