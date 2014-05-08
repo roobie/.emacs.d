@@ -102,5 +102,9 @@
 
 (add-hook 'skewer-mode-hook (lambda () (inferior-js-keys-mode -1)))
 
+;; show indentation guides
+(require 'highlight-indentation)
+(add-hook 'js2-mode-hook 'highlight-indentation-mode)
+
 
 (provide 'javascript)
