@@ -79,15 +79,14 @@
 
 (dolist (hook '(js2-mode-hook js3-mode-hook js-mode-hook))
   (progn
-    (add-hook hook 'inferior-js-keys-mode)
-    ;(add-hook hook 'paredit-mode)
-    ))
+    (add-hook hook 'inferior-js-keys-mode)))
 
 (dolist (mode '(js-mode js2-mode js3-mode))
   (progn
     (font-lock-add-keywords mode
                             `((;"\\(function *\\)"
-                               "\\(function*[ ]*\\)[\(]+"
+                               ;"\\(function*[ ]*\\)[\(]+"
+                               "\\(function*[ ]*\\)[[:alnum:]]*[\(]+"
                                (0 (progn (compose-region (match-beginning 1) (match-end 1)
                                                          "λ");"ƒ"
                                          nil)))))

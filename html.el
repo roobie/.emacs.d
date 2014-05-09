@@ -12,4 +12,8 @@
      (tagedit-add-paredit-like-keybindings)
      (add-hook 'html-mode-hook (lambda () (tagedit-mode 1)))))
 
+;; show indentation guides
+(require 'highlight-indentation)
+(add-hook 'html-mode-hook 'highlight-indentation-mode)
+
 (provide 'html)
