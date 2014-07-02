@@ -4,5 +4,5 @@
 
 ;;; Theming ;;;
 ;(color-theme-molokai)
-
+(load-theme 'niflheim t)
 (provide 'theming)
