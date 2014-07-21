@@ -4,6 +4,9 @@
 
 (define-key global-map (kbd "M-e") 'yas/expand)
 
+
+(define-key global-map (kbd "C-<tab>") 'other-window)
+
 (defun move-text-internal (arg)
   (cond
    ((and mark-active transient-mark-mode)
