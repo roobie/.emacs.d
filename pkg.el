@@ -55,6 +55,7 @@
                       mmm-mode
                       smex
                       js2-mode
+                      ac-js2
                       js3-mode
                       json
                       js-comint
@@ -66,7 +67,10 @@
                       redshank
                       go-mode
                       go-errcheck
-                      company-go)
+                      company-go
+                      niflheim-theme
+                      tagedit
+                      highlight-indentation)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
