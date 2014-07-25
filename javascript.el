@@ -27,7 +27,7 @@
 
 ;; js2-mode
 (add-hook 'js2-mode-hook '(lambda () (setq mode-name "JS2")))
-(setq js2-use-font-lock-faces t
+(setq ;js2-use-font-lock-faces t
       js2-mode-must-byte-compile nil
       js2-basic-offset preferred-javascript-indent-level
       js2-indent-on-enter-key t
@@ -88,7 +88,8 @@
                                ;"\\(function*[ ]*\\)[\(]+"
                                "\\(function*[ ]*\\)[[:alnum:]]*[\(]+"
                                (0 (progn (compose-region (match-beginning 1) (match-end 1)
-                                                         "λ");"ƒ"
+                                                         ;"ƒ" || "λ" || "⇒"
+                                                         "ƒ")
                                          nil)))))
     (font-lock-add-keywords mode
                             '(("\\<\\(FIX\\|TODO\\|FIXME\\|HACK\\|REFACTOR\\):"
@@ -105,7 +106,8 @@
 (require 'highlight-indentation)
 (add-hook 'js2-mode-hook 'highlight-indentation-mode)
 
-(require 'ac-js2)
-(add-hook 'js2-mode-hook 'ac-js2-mode)
+;; ac-js2 borked
+;(require 'ac-js2)
+;(add-hook 'js2-mode-hook 'ac-js2-mode)
 
 (provide 'javascript)
