@@ -5,18 +5,25 @@
                        pkg
                        misc
                        theming
+
                        key-bindings
+
                        auto-complete
                        yas
+
                        dired-cfg
                        idocfg
+
                        lisp
                        slime
+
+                       html
                        javascript
+
                        go-mode-load
                        go
+
                        nimrod
-                       html
                        ))
 
 ;; Load the files in the .emacs.d directory
